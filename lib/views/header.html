@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Header</title>
+    <meta charset="UTF-8">
+    $css
+</head>
+<body>
+    $content
+    <script>
+        var vars = {}, queryString = document.location.search.substring(1).split('&');
+        for (var qs in queryString) {
+            var qsObj = queryString[qs].split('=', 2);
+            vars[qsObj[0]] = decodeURI(qsObj[1]);
+        }
+
+        document.querySelector("#page").innerHTML += vars.page >= 10 ? vars.page : "0" + vars.page;
+    </script>
+</body>
+</html>

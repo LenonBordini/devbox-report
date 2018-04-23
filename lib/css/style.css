@@ -1,0 +1,65 @@
+* {
+    font-family: Calibri;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+
+body.has-header { padding-top: 20px; }
+div.break { page-break-before: always; }
+
+table {
+	border-spacing: 0; 
+    border-top: 1pt solid #000;
+}
+td, th {
+    border-left: 1pt solid black;
+    border-bottom: 1pt solid black;
+    padding: 3px; 
+    text-align: center;
+}
+tr td:last-child, tr th:last-child {
+	border-right: 1pt solid #000;
+}
+
+table.alternate tbody tr:nth-child(odd) td { background: #fff; }
+table.alternate tbody tr:nth-child(even) td { background: #eee; }
+
+table.repeat,
+table.repeat thead,
+table.repeat tbody,
+table.repeat tfoot,
+table.repeat tr,
+table.repeat th,
+table.repeat td {
+    page-break-inside: avoid;
+}
+table.repeat thead { display: table-header-group; }
+table.repeat tfoot { display: table-footer-group; }
+
+.block { display: block; }
+.inline {display: inline-block; }
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+.justify { text-align: justify; }
+.top { vertical-align: top; }
+.bottom { vertical-align: bottom; }
+.middle { vertical-align: middle; }
+
+.border { border: 1pt solid #000; }
+.border2 { border: 2pt solid #000; }
+.no-bbottom { border-bottom: 0; }
+
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+
+.pad { padding: 5px 8px; margin: 2px 0; }
+.pad2 { padding: 10px 8px; margin: 2px 0; }
+
+.blue { color: blue; }
+.red { color: red; }

@@ -1,0 +1,17 @@
+{
+  "name": "devbox-report",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsreport-core": "^1.5.1",
+    "jsreport-jsrender": "^1.0.2",
+    "jsreport-wkhtmltopdf": "^1.4.0",
+    "vash": "^0.12.4"
+  }
+}
