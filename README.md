@@ -2,11 +2,11 @@
 
 Framework para geração de relatórios utilizando:
 
-1. [jsReport]() + [wkhtmltopdf]()
-2. [vash]() como compilador
-3. Um [mini-framework]() css para dar agilidade (opcional)
+1. [jsReport](https://jsreport.net/) + [wkhtmltopdf](https://wkhtmltopdf.org/)
+2. [vash](https://www.npmjs.com/package/vash) como compilador
+3. Um [mini-framework](https://github.com/LenonBordini/devbox-report/blob/master/lib/css/style.css) css para dar agilidade (opcional)
 
-> Para o título dos relatórios funcionar, você deve instalar no seu ambiente o [wkhtmltopdf.exe]()
+> Para o título dos relatórios funcionar, você deve instalar no seu ambiente o [wkhtmltopdf.exe](https://github.com/LenonBordini/devbox-report/blob/master/lib/wkhtmltopdf/wkhtmltopdf.exe)
 
 ## Instalação
 
