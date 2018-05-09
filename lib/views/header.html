@@ -2,19 +2,36 @@
 <html>
 <head>
     <title>Report Header</title>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     $css
 </head>
 <body>
     $content
     <script>
-        var vars = {}, queryString = document.location.search.substring(1).split('&');
+        var queryString = document.location.search.substring(1).split('&'), elem;
         for (var qs in queryString) {
             var qsObj = queryString[qs].split('=', 2);
-            vars[qsObj[0]] = decodeURI(qsObj[1]);
-        }
+            if (elem = document.querySelector("#" + qsObj[0])) {
+                var value = decodeURI(qsObj[1]);
+                if (+value)
+                    value = +value;
 
-        document.querySelector("#page").innerHTML += vars.page >= 10 ? vars.page : "0" + vars.page;
+                switch (elem.id) {
+                    case 'page':
+                        if (elem.dataset.length) {
+                            value = new Array(elem.dataset.length + 1).join('0') + value.toString();
+                            value = value.substr(value.length - elem.dataset.length);
+                        }
+                        break;
+                    case 'topage':
+                        value--;
+                        break;
+                    default: break;
+                }
+
+                elem.innerHTML = value;
+            }
+        }
     </script>
 </body>
 </html>
