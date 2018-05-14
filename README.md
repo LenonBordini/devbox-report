@@ -41,10 +41,10 @@ let config = {
     }
 };
 
-devboxReport(config);
+let report = devboxReport(config);
 
 // Middleware (EX: express)
-app.use(devboxReport.pdf);
+app.use(report.pdf);
 ```
 
 ### controller.js
