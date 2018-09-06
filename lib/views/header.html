@@ -19,7 +19,7 @@
                 switch (elem.id) {
                     case 'page':
                         if (elem.dataset.length) {
-                            value = new Array(elem.dataset.length + 1).join('0') + value.toString();
+                            value = new Array(+elem.dataset.length + 1).join('0') + value.toString();
                             value = value.substr(value.length - elem.dataset.length);
                         }
                         break;
