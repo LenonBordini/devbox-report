@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "jsreport-core": "^2.6.2",
+    "jsreport-html-to-xlsx": "^2.4.1",
     "jsreport-wkhtmltopdf": "^2.1.1",
     "vash": "^0.12.4"
   }
