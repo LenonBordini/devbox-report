@@ -23,50 +23,54 @@ Todos os arquivos HTML não precisam de corpo (html, head e body), o pacote já 
 ```js
 const devboxReport = require('devbox-report');
 
-let config = { 
-    // Estilos para serem usados no report
-    css: [ 'http://example.com.br/style.css', '...' ],
-
-    // Scripts para serem usados no report (como Chart.js por exemplo)
-    js: [ 'http://example.com.br/script.js', '...' ],
+let config = {
+    css: ['http://example.com.br/style.css', '...'],
+    js: ['http://example.com.br/script.js', '...'],
 
     default: {
-        title: 'Título default dos reports', // default: 'Report'
-        orientation: 'Orientação dos reports', // default: 'portrait' (portrait | landscape)
-        fileName: 'Nome default do arquivo dos reports', // default: 'report.html'
+        title: 'Report',
+        orientation: 'portrait', // landscape
+        fileName: 'report.html',
 
-        // default: undefined
-        header: path.join('Caminho de um arquivo html para usar como header em todos os reports'),
-        footer: path.join('Caminho de um arquivo html para usar como footer em todos os reports')
+        header: path.join('...'),
+        footer: path.join('...')
     }
 };
 
 let report = devboxReport(config);
 
-// Middleware (EX: express)
+// Middleware (Ex: express)
 app.use(report.pdf);
+app.use(report.xlsx);
 ```
 
 ### controller.js
 
 ```js
-module.exports = async function (req, res, next) {
-    await res.pdf(__dirname, { 
-        data: {}, // model do report (usando vash dentro do report.html)
+module.exports = async function(req, res, next) {
+    // Stuff...
 
-        // Opções para o report em questão (caso não informado, pega o default)
-        title: 'Título',
+    // Html to PDF
+    return res.pdf(__dirname, {
+        title: 'Title',
         orientation: 'landscape',
         fileName: 'graphReport.html',
-        css: [ '.../myFramework.css' ],
-        js: [ '.../chart.js' ],
+        css: ['.../myFramework.css'],
+        js: ['.../chart.js'],
 
-        header: false, // Exclui o header ou muda default passando outro path
-        footer: false, // Exclui o footer ou muda default passando outro path
+        data: {}, // data using vash
 
-        // Possibilita a execução de javascript dentro do report até setar a flag lá dentro
-        // window.status = 'flag';
+        header: false,
+        footer: false,
+
+        // Wait for Js (window.status = 'flag')
         windowStatus: 'flag'
+    });
+
+    // Html to XLSX
+    return res.xlsx(__dirname, {
+        title: 'Title',
+        data: {} // data using vash
     });
 };
 ```

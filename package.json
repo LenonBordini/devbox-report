@@ -1,6 +1,6 @@
 {
   "name": "devbox-report",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "report",
     "jsreport",
     "wkhtmltopdf",
+    "htmltoxlsx",
+    "html to xlsx",
     "vash",
-    "relatório",
     "report framework"
   ],
   "repository": {
@@ -21,9 +22,8 @@
   "author": "Lenon Bordini",
   "license": "ISC",
   "dependencies": {
-    "jsreport-core": "^1.5.1",
-    "jsreport-jsrender": "^1.0.2",
-    "jsreport-wkhtmltopdf": "^1.4.0",
+    "jsreport-core": "^2.6.2",
+    "jsreport-wkhtmltopdf": "^2.1.1",
     "vash": "^0.12.4"
   }
 }
