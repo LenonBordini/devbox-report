@@ -1,6 +1,5 @@
 {
-  "name": "@lenonbordini/devbox-report",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "name": "devbox-report",
   "version": "1.1.11",
   "description": "",
   "main": "lib/index.js",
