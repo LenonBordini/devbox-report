@@ -1,6 +1,6 @@
 {
   "name": "devbox-report",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "jsreport-core": "^2.6.2",
+    "jsreport-html-embedded-in-docx": "^2.2.0",
     "jsreport-html-to-xlsx": "^2.4.1",
     "jsreport-wkhtmltopdf": "^2.1.1",
     "puppeteer": "1.19.0",
